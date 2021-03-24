@@ -63,8 +63,8 @@ export default {
 
             return new Intl.DateTimeFormat('ru-RU', options).format(new Date(value))
         },
-        logout() {
-            console.log('logout');
+        async logout() {
+            await this.$store.dispatch('logout')
             this.$router.push('/login?message=logout')
         }
     },
